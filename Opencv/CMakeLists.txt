@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 4.1)
+project( run_me )
+find_package( OpenCV REQUIRED )
+message("OpenCV version: ${OpenCV_VERSION}")
+add_executable( run_me current_file.cpp )
+target_link_libraries( run_me ${OpenCV_LIBS} )

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rao's Chem Letter Detection</title>
+    <style>
+		.button-class {
+			background-color: #4CAF50;
+			/* Green */
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+<h2>Lewis Structure Identifier</h2>
+<!--<button onclick="gotoindex()" id="bigbutton">Open Interface</button>-->
+<a class="button-class" href="/home">Click to go to the Interface</a>
+<script>
+    function gotoindex(){
+        var element=document.getElementbyId("bigbutton")
+        element.innerHTML="http://127.0.0.1/home"
+    }
+</script>
+</body>
+</html>
