@@ -1,5 +1,5 @@
 import pubchempy as ppy
-from pubchemprops.pubchemprops import get_second_layer_props
+from pubchemprops.pubchemprops import *
 vals=ppy.get_compounds("O=S(=[O])(O[H])O[H]","smiles")
 lore=vals[0]
 #print(lore.record)
@@ -8,9 +8,9 @@ propstring="Wikipedia, Boiling Point, Melting Point, Flash Point, Solubility, De
 mainlist={}
 failedprops=[]
 for val in propstring.split(", "):
-    print(val)
+    print(get_first_layer_props("1-bromo-2-methylbutane",["Complexity"]))
     try:
-        mainlist[val]=(get_second_layer_props("acetic-acid",[val])[val][0]["Value"]["StringWithMarkup"][0]["String"])
+        mainlist[val]=(get_second_layer_props("1-bromo-2-methylbutane",[val])[val][0]["Value"]["StringWithMarkup"][0]["String"])
     except (KeyError,IndexError,TypeError):
         failedprops.append(val)
         continue
