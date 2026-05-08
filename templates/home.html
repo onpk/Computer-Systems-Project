@@ -3,32 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <title>Rao's Chem Letter Detection</title>
+
     <style>
-		.button-class {
-			background-color: #4CAF50;
-			/* Green */
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-	</style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1e3c2f, #2e8b57);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            color: #1e3c2f;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .button-class {
+            background: #2e8b57;
+            border: none;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .button-class:hover {
+            background: #256f47;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
+
 <body>
-<h2>Lewis Structure Identifier</h2>
-<!--<button onclick="gotoindex()" id="bigbutton">Open Interface</button>-->
-<a class="button-class" href="/home">Click to go to the Interface</a>
-<script>
-    function gotoindex(){
-        var element=document.getElementbyId("bigbutton")
-        element.innerHTML="http://127.0.0.1/home"
-    }
-</script>
+
+    <div class="container">
+        <h1>Lewis Structure Identifier</h1>
+        <br>
+        <p>
+            <i>Upload and analyze chemical structure images using
+            computer vision and molecular recognition tools.</i>
+        </p>
+
+        <a class="button-class" href="/home">
+            Open Interface
+        </a>
+    </div>
+
 </body>
 </html>

@@ -87,8 +87,28 @@
             border-radius: 8px;
             border-left: 5px solid #2e8b57;
         }
+        .togdiv{
+            margin-top: 20px;
+            padding: 15px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            border-left: 5px solid #2e8b57;
+        }
         hr {
             margin-top: 30px;
+        }
+        .button-class {
+            background: #2e8b57;
+            border: none;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -98,6 +118,11 @@
         <input type="file" id="image_select" name="image_select" accept=".jpg, .png, .jpeg" class="my-button">
         <div>
             <button type="submit"> Open Image</button>
+            <br>
+            <br>
+            <a class="button-class" href="/home">
+                Upload Another Image
+            </a>
         </div>
        </form>
 
@@ -138,22 +163,27 @@
         </form>
     </div>
     {%if collected_props%}
-        The collected properties from the database are as follows:
-        <ul>
-            {%for key,value in collected_props.items()%}
-                <li>{{key}} --> {{value}}</li>
-            {%endfor%}
-        </ul>
-        {%if failed|length >0%}
-            The properties that could not be collected from the database are as follows:
+        <div class="togdiv">
+            The collected properties from the database are as follows:
             <ul>
-                {%for ele in failed%}
-                    <li>ele</li>
+                {%for key,value in collected_props.items()%}
+                <li><strong>{{key}}</strong> --> {{value}}</li>
                 {%endfor%}
             </ul>
-        {%endif%}
+            {%if failed|length >0%}
+                The properties that could not be collected from the database are as follows:
+                <ul>
+                    {%for ele in failed%}
+                        <li>ele</li>
+                    {%endfor%}
+                </ul>
+            {%endif%}
+        </div>
+
     {%endif%}
+
     </div>
+
     <hr>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
